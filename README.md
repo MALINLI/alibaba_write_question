@@ -17,14 +17,14 @@ Bob,30,David
 David,60,
 Anna,10,Bob
 `;
-【
+
+思路：
 * csv文件内容读取和解析
 * csv文件内容是字符串
 * 解析成Person规则的对象结构
 * csv文件以换行分割每一条记录
 * csv文件以逗号分隔每一条记录的各个字段
 * 需考虑第一行是内容还是字段名
-】
 
 
 
@@ -47,13 +47,13 @@ var result = find(data).where({
 }).orderBy('userId', 'desc');
 
 console.log(result);// [{ userId: 19, title: 'title2'}, { userId: 8, title: 'title1' }];
-【
+
+思路：
 * 类似mysql的查询
 * 查找数组里符合规则的一项数据
 * where和orderby是find函数的方法
 * where接收对象作为参数（{key: 规则}）
 * orderby接收两个参数（key, 升序还是降序）
-】
 
 
 
@@ -62,7 +62,8 @@ console.log(result);// [{ userId: 19, title: 'title2'}, { userId: 8, title: 'tit
 •  写一个弹窗组件，有一个展示区域和关闭按钮，不要求样式，但需要提供测试用例。参考：
 • https://ant.design/components/modal-cn/#header
 • https://getbootstrap.com/docs/4.2/components/modal/#live-demo
-【
+
+思路：
 * js实现
 * 主要接收参数：
 {
@@ -73,7 +74,6 @@ console.log(result);// [{ userId: 19, title: 'title2'}, { userId: 8, title: 'tit
 	title: string //弹框标题
 	content： string || node //弹框内容	
 }
-】
 
 
 
@@ -83,9 +83,9 @@ console.log(result);// [{ userId: 19, title: 'title2'}, { userId: 8, title: 'tit
 • 能够加载1W + 数据，加载和查看数据时不卡顿
 • 能够对单元格进行格式化
 • 扩展功能表头resize（拖拽等功能）
-【
+
+思路：
 * 使用无限滚动列表实现（虚拟列表）
-】
 
 
 
