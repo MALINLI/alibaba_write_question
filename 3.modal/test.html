@@ -1,0 +1,26 @@
+<!-- •  写一个弹窗组件，有一个展示区域和关闭按钮，不要求样式，但需要提供测试用例。参考：
+• https://ant.design/components/modal-cn/#header
+• https://getbootstrap.com/docs/4.2/components/modal/#live-demo -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Overlay Demo</title>
+    <link rel="stylesheet" type="text/css" href="./modal.css" />
+    </style>
+</head>
+
+<body>
+    <h1>Overlay Demo</h1>
+    <button id="runBtn" style="cursor: pointer;">点击运行</button>
+    <script type="text/javascript" src="./modal.js"></script> 
+    <script>
+        var overlay = new Overlay({
+            target: '#runBtn',
+            title: '自定义标题',
+            content: '自定义内容...'
+        }).width(460).height(270);
+    </script>
+</body>
+</html>
