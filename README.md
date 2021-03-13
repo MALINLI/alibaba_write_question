@@ -78,8 +78,7 @@ console.log(result);// [{ userId: 19, title: 'title2'}, { userId: 8, title: 'tit
 
 
 
-4、
-• 使用 纯 JS / react/Vue/typescript 写一个 Grid 组件要求：
+4、使用 纯 JS / react/Vue/typescript 写一个 Grid 组件，要求：
 • 能够加载1W + 数据，加载和查看数据时不卡顿
 • 能够对单元格进行格式化
 • 扩展功能表头resize（拖拽等功能）
@@ -90,8 +89,7 @@ console.log(result);// [{ userId: 19, title: 'title2'}, { userId: 8, title: 'tit
 
 
 
-5、
-• 实现一个前端缓存模块，主要用于缓存 xhr 返回的结果，避免多余的网络请求浪费，要求：
+5、实现一个前端缓存模块，主要用于缓存 xhr 返回的结果，避免多余的网络请求浪费，要求：
 • 生命周期为一次页面打开
 • 如果有相同的请求同时并行发起，要求其中一个能挂起并且等待另外一个请求返回并读取该缓存
 

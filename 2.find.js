@@ -18,6 +18,9 @@ var data = [
 ];
 
 function find(origin){
+        if (!Array.isArray(origin)) {
+          return null
+        }
         this.data = origin;
         this.where = function(rule) {
           for(let p in rule) {
@@ -47,5 +50,3 @@ var result = find(data).where({
 }).orderBy('userId', 'desc');
 
 console.log(result);// [{ userId: 19, title: 'title2'}, { userId: 8, title: 'title1' }];
-
-//有一滴滴问题
