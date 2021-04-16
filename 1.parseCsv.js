@@ -1,12 +1,13 @@
-/** 给定 csv 文件，转换成对象结构(并提供测试用例):
-* interface Person {
-*   name: string;
-*   age: number;
-*   parent: Person[];
-*   children: Person[];
-* }
+ /** 给定 csv ⽂件，转换成对象结构(并提供测试⽤例):
+ * interface Person {
+ * name: string;
+ * age: number;
+ * parent: Person[];
+ * children: Person[];
+ * }
+ */
 
-【思路：
+/*【思路：
 * csv文件内容解析
 * csv文件内容是字符串
 * 解析成Person规则的对象结构
@@ -14,14 +15,6 @@
 * csv文件以逗号分隔每一条记录的各个字段
 】
 */
-
-const csv = `
-name,age,parent
-Bob,30,David
-Bob,30,Tom
-David,60,
-Anna,10,Bob
-`;
 
 function parseCsv(str) {
   const rowArr = str.trim().split("\n");
@@ -35,7 +28,7 @@ function parseCsv(str) {
         const temp = item.split(",");
          for(let j = 0; j < temp.length; j++){
            if(headers[j] === 'parent') {
-             obj.parent.push(temp[j]);
+            temp[j] && obj.parent.push(temp[j]);
            } else {
             obj[headers[j]] = temp[j];
            }
@@ -45,7 +38,7 @@ function parseCsv(str) {
   }
   const len = data.length;
   for(let i = 0; i < len; i ++) {
-    for(let j = 1; j < len; j ++) {
+    for(let j = 0; j < len; j ++) {
       if(data[i].parent.includes(data[j].name) &&  !data[j].children.includes(data[i].name)) {
         data[j].children.push(data[i].name)
       }
@@ -57,4 +50,10 @@ function parseCsv(str) {
    return data;
 }
 
+const csv = `
+name,age,parent
+Bob,30,David
+David,60,
+Anna,10,Bob
+`;
 console.log(parseCsv(csv))
