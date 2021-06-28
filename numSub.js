@@ -1,25 +1,15 @@
-// 数字 1
-function one() {
-    let args = arguments.length ? arguments[0] : []
-    if (!Array.isArray(args)) {
-        throw Error('参数类型错误')
+function num(base) {
+    return function() {
+        let list = arguments.length ? arguments[0] : []
+        if (!Array.isArray(list)) {
+            throw Error('参数类型错误')
+        }
+        list.unshift(base)
+        return list
     }
-    return (function() {
-        args.unshift(1)
-        return args
-    })()
 }
-// 数字 2
-function two() {
-    let args = arguments.length ? arguments[0] : []
-    if (!Array.isArray(args)) {
-        throw Error('参数类型错误')
-    }
-    return (function() {
-        args.unshift(2)
-        return args
-    })()
-}
+const one = num(1)
+const two = num(2)
 // 减法
 function sub() {
     const list = arguments.length ? arguments[0] : []
